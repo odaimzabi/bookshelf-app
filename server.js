@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(cors())
 
-mongoose.connect('mongodb+srv://odaim:helloworld@cluster0-lulik.mongodb.net/odaim?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGOURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 },()=>console.log("connected to mongodb"));
